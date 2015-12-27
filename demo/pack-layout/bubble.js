@@ -33,8 +33,8 @@
 
     // 绘制
     var svg = d3.select("body").append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        .attr("width", width + 10)
+        .attr("height", height + 10);
 
 
     var color = d3.scale.category20();
@@ -46,10 +46,10 @@
         .append("circle")
         .attr({
             cx: function(d) {
-                return d.x;
+                return d.x + 3;// 因为父级别的 3px的描边
             },
             cy: function(d) {
-                return d.y;
+                return d.y + 3;
             },
             r: function(d) {
                 return d.r;
@@ -58,6 +58,9 @@
                 return color(Math.random());
             },
             stroke: "#444", // 描边
+            'stroke-width': function (d) {
+                return (d.parent ? 1 : 3) + 'px';
+            }
         });
 
 })()

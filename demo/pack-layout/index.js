@@ -69,7 +69,7 @@
             'y': function(d) {
                 return d.y;
             },
-            "text-anchor": "middle",
+            "text-anchor": "middle",// 文字水平对齐 可选值 start,middle,end
             "dy": 3
         })
         .text(function(d) {
