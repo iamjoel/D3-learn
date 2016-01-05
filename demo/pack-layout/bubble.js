@@ -1,6 +1,7 @@
 (function() {
     var width = 200;
     var height = 200;
+    var padding = 5;
     var data = (function() {
         var res = {
             children: []
@@ -24,10 +25,10 @@
     })();
     var pack = d3.layout.pack()
         .size([width, height]) // 宽，高
-        .padding(2) // 间距
-        .sort(function(a, b) { // 大的在中间，小的在四周
-            return b.value - a.value;
-        });
+        .padding(padding) // 间距
+        // .sort(function(a, b) { // 大的在中间，小的在四周
+        //     return b.value - a.value;
+        // });
     var nodes = pack.nodes(data); // allData 在 data.js 中定义
     // nodes = nodes.filter(function(it) { return it.parent; });// 最外层的
 
