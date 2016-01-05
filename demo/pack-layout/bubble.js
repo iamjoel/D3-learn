@@ -1,3 +1,5 @@
+// 将 bubble放入矩形中，而不是圆中
+// http://stackoverflow.com/questions/13339615/packing-different-sized-circles-into-rectangle-d3-js
 (function() {
     var width = 200;
     var height = 200;
